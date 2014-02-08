@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Peter's Hats</title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+		<!-- jquery and jquery ui stuff for slider directive -->
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+		<!-- angular from recommended google CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-touch.min.js"></script>  angular touch. look into this if there's time-->
+
+		<!-- app styles -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/slider.js"></script>
+		<script type="text/javascript" src="js/petersHats.js"></script>
+		
+	</head>
+	<body>
+		<div ng-app="petersHats" ng-controller="PetersHatsCtrl" class="container">
+			<div class="row main">
+				<div class="col-sm-6">
+					<img class="img-responsive" src="{{selected.imageSrcFull}}">
+				</div>
+				<div class="col-sm-6">
+					<div class="hat-info">
+						<h2>{{selected.name}}</h2>
+						<div class="hat-details">
+							<span class="price">{{selected.price | currency}}</span> 
+							<span class="size">Size {{selected.size}}</span>
+							<span class="color">{{selected.color}}</span>
+						</div>
+					</div>
+					<hr>
+					<div class="filters">
+						<div 
+							class="filter"
+							ph-slider 
+							ng-model-pair="priceRange"
+							ph-slider-label="Price"
+							ph-slider-min="0"
+							ph-slider-max="50"
+							ph-slider-filter-name="currency"
+							>
+						</div>
+						<div 
+							class="filter"
+							ph-slider 
+							ng-model-pair="sizeRange"
+							ph-slider-label="Size"
+							ph-slider-min="4"
+							ph-slider-max="10"
+							>
+						</div>
+						<div class="filter">
+							<div class="value-label">Colors</div>
+							<div class="color-picker clearfix" ng-repeat="color in colors.options" >
+								<label ng-class="colors[color] ? '' : 'color-label-disabled'" class="color-label color-label-{{color}}" for="color-picker-{{color}}"><span class="sr-only">{{color}}</span></label>
+								<input type="checkbox" ng-model="colors[color]" id="color-picker-{{color}}" class="color-input">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row results">
+				<div class="col-sm-12">
+					<div class="thumbnail result" ng-repeat="hat in hats | costs:priceRange.low:priceRange.high | sized:sizeRange.low:sizeRange.high | colored:colors" ng-click="select(hat)">
+						<div class="result-inner">
+							<img class="img-responsive" src="{{hat.imageSrcThumbnail}}">
+							<span class="result-label">{{hat.name}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
