@@ -43,9 +43,9 @@ scrollingSlideShow.directive('phSlideShow', ['$swipe', function($swipe){
 					touchXStarth = coords.x;
 				},
 				'move': function(coords) {
-					var touchXDelta = coords.x - touchXStarth;
-					posX -= touchXDelta;
-					touchXDelta = 0;
+					touchXDelta = coords.x - touchXStarth;
+			        mX -= touchXDelta;
+			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
 				},
 				'end': function(coords) {
 					return;
