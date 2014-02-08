@@ -3,7 +3,6 @@ var jQueryUISlider = angular.module('jQueryUISlider', []);
 jQueryUISlider.directive('phSlider', function(){
 	return {
 		restrict: 'A',
-		replate: false,
 		scope: {
 			ngModelPair: '=ngModelPair',
 			name: '@ngModelPair',
