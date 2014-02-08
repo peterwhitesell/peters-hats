@@ -1,4 +1,4 @@
-var petersHats = angular.module('petersHats', ['phWidget', 'jQueryUISlider', 'scrollingSlideShow', 'ngTouch']);
+var petersHats = angular.module('petersHats', ['phWidget']);
 // var petersHats = angular.module('petersHats', []);
 
 petersHats.filter('costs', function(){

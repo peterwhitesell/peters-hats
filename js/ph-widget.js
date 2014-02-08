@@ -1,4 +1,4 @@
-var phWidget = angular.module('phWidget', []);
+var phWidget = angular.module('phWidget', ['jQueryUISlider', 'scrollingSlideShow', 'ngTouch']);
 
 phWidget.directive('phWidgetContainer', function(){
 	return {
