@@ -37,19 +37,21 @@ scrollingSlideShow.directive('phSlideShow', ['$swipe', function($swipe){
 			});
 
 			var touchXStart = null;
+			var touchXDelta = 0;
 			$swipe.bind(elm, {
 				'start': function(coords) {
 					touchXStarth = coords.x;
 				},
 				'move': function(coords) {
-					var delta = coords.x - pointX;
-					posX += delta;
+					var touchXDelta = coords.x - touchXStarth;
+					posX -= touchXDelta;
+					touchXDelta = 0;
 				},
 				'end': function(coords) {
-					// ...
+					return;
 				},
 				'cancel': function(coords) {
-					// ...
+					return;
 				}
 			});
 			$(document).ready(rebuild);
