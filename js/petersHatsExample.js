@@ -1,31 +1,6 @@
 var petersHats = angular.module('petersHats', ['phWidget']);
 // var petersHats = angular.module('petersHats', []);
 
-petersHats.filter('costs', function(){
-	return function(items, lowerBound, upperBound){
-		return items.filter(function(item){
-			return item.price >= lowerBound && item.price <= upperBound;
-		});
-	};
-});
-
-petersHats.filter('colored', function(){
-	return function(items, colors){
-		return items.filter(function(item){
-			return colors.hasOwnProperty(item.color) && colors[item.color];
-		});
-	};
-});
-
-petersHats.filter('sized', function(){
-	return function(items, lowerBound, upperBound){
-		return items.filter(function(item){
-			return item.size >= lowerBound && item.size <= upperBound;
-		});
-	};
-});
-
-
 function PetersHatsCtrl($scope){
 	$scope.hats = [
 		{
