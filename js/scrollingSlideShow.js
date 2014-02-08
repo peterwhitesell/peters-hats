@@ -32,8 +32,8 @@ scrollingSlideShow.directive('phSlideShow', ['$swipe', function($swipe){
 				}, 10);
 			};
 			bl.mousemove(function(e) {
-		        mX = e.pageX - this.offsetLeft;
-		        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+				mX = e.pageX - this.offsetLeft;
+				mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
 			});
 
 			var touchXStart;
@@ -44,8 +44,8 @@ scrollingSlideShow.directive('phSlideShow', ['$swipe', function($swipe){
 				},
 				'move': function(coords) {
 					touchXDelta = coords.x - touchXStarth;
-			        mX -= touchXDelta;
-			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
+					mX -= touchXDelta;
+					mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
 				},
 				'end': function(coords) {
 					touchXDelta = 0;
