@@ -36,7 +36,7 @@ scrollingSlideShow.directive('phSlideShow', ['$swipe', function($swipe){
 		        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
 			});
 
-			var touchXStart = null;
+			var touchXStart;
 			var touchXDelta = 0;
 			$swipe.bind(elm, {
 				'start': function(coords) {
@@ -48,9 +48,11 @@ scrollingSlideShow.directive('phSlideShow', ['$swipe', function($swipe){
 			        mX2 = Math.min( Math.max(0, mX-mPadd), mmAA ) * mmAAr;
 				},
 				'end': function(coords) {
+					touchXDelta = 0;
 					return;
 				},
 				'cancel': function(coords) {
+					touchXDelta = 0;
 					return;
 				}
 			});
