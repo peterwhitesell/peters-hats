@@ -1,26 +1,39 @@
 /*------------------------------------
 			GENERAL STYLES
 -------------------------------------*/
-.row{
-	margin-bottom: 20px;
+.peters-hats{
+	width: 500px;
+	max-width: 100%;
+	margin: 0 auto;
 }
 /*------------------------------------
 			SELECTED STYLES
 -------------------------------------*/
 .hat-info{
-	height: 8em;
+	width: 50%;
+}
+.hat-image{
+	width: 50%
+}
+.hat-details{
+	float: left;
+	width: 40%;
+}
+.filters{
+	/*float: right;*/
+	/*width: 100%;*/
 }
 .hat-info span{
 	/*margin-right: 20px;*/
 }
-.hat-info .price{
+.hat-details .price{
 	font-weight: bold;
 	font-size: 1.5em;
 }
-.hat-info .size{
+.hat-details .size{
 	font-weight: bold;
 }
-.hat-info .color{
+.hat-details .color{
 	vertical-align: middle;
 	font-weight: bold;
 }
@@ -38,6 +51,15 @@
 /*------------------------------------
 			FILTERS STYLES
 -------------------------------------*/
+.filter[ph-slider]{
+	float: right;
+	clear: right;
+	width: 60%;
+}
+.filter{
+	clear: right;
+	float: right;
+}
 .ui-slider{
 	width: 100%;
 	margin: 5px 0;
@@ -98,9 +120,14 @@
 /*------------------------------------
 			RESULT STYLES
 -------------------------------------*/
+.results{
+	display: block;
+	clear: both;
+}
 .result{
 	display: inline-block;
 	margin-right: 10px;
+	margin-left: 5px;
 	cursor: pointer;
 	text-align: center;
 }

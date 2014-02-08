@@ -1,0 +1,53 @@
+<div class="main clearfix">
+	<div class="pull-left hat-image">
+		<img class="img-responsive" ng-src="{{selected.imageSrcFull}}">
+	</div>
+	<div class="hat-info pull-left clearfix">
+		<h2>{{selected.name}}</h2>
+		<div class="hat-details">
+			<div class="price">{{selected.price | currency}}</div> 
+			<div><span class="size">Size</span>: {{selected.size}}</div>
+			<div><span class="color sr-only">Color</span><span class="color-block  color-label-{{selected.color}}"></span><span class="sr-only">{{selected.color}}</span></div>
+		</div>
+		<div class="filters clearfix">
+			<div 
+				class="filter"
+				ph-slider 
+				ng-model-pair="priceRange"
+				ph-slider-label="Price"
+				ph-slider-min="0"
+				ph-slider-max="50"
+				ph-slider-filter-name="currency"
+				>
+			</div>
+			<div 
+				class="filter"
+				ph-slider 
+				ng-model-pair="sizeRange"
+				ph-slider-label="Size"
+				ph-slider-min="4"
+				ph-slider-max="10"
+				>
+			</div>
+			<div class="filter">
+				<div class="value-label">Colors</div>
+				<div class="color-picker clearfix" ng-repeat="color in colors.options" >
+					<label ng-class="colors[color] ? '' : 'color-label-disabled'" class="color-label color-label-{{color}}" for="color-picker-{{color}}"><span class="sr-only">{{color}}</span></label>
+					<input type="checkbox" ng-model="colors[color]" id="color-picker-{{color}}" class="color-input">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="results">
+	<div class="thumbs-block" ph-slide-show>
+		<div class="thumbs" ph-thumbs>
+			<div class="thumbnail result" ng-repeat="hat in hats | costs:priceRange.low:priceRange.high | sized:sizeRange.low:sizeRange.high | colored:colors" ng-click="select(hat)">
+				<div class="result-inner">
+					<img class="img-responsive" ng-src="{{hat.imageSrcThumbnail}}">
+					<span class="result-label">{{hat.name}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
