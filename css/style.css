@@ -19,22 +19,14 @@
 	float: left;
 	width: 40%;
 }
-.filters{
-	/*float: right;*/
-	/*width: 100%;*/
-}
 .hat-info span{
-	/*margin-right: 20px;*/
+	margin-right: 20px;
 }
 .hat-details .price{
 	font-weight: bold;
 	font-size: 1.5em;
 }
-.hat-details .size{
-	font-weight: bold;
-}
-.hat-details .color{
-	vertical-align: middle;
+.hat-details .size-label{
 	font-weight: bold;
 }
 .color-block{
@@ -127,8 +119,8 @@
 .result{
 	display: inline-block;
 	margin-right: 10px;
-	margin-left: 5px;
-	cursor: pointer;
+	margin-left: 5px
+;	cursor: pointer;
 	text-align: center;
 }
 .result-inner{

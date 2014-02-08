@@ -1,13 +1,13 @@
 <div class="main clearfix">
+	<h2>{{selected.name}}</h2>
 	<div class="pull-left hat-image">
 		<img class="img-responsive" ng-src="{{selected.imageSrcFull}}">
 	</div>
 	<div class="hat-info pull-left clearfix">
-		<h2>{{selected.name}}</h2>
 		<div class="hat-details">
-			<div class="price">{{selected.price | currency}}</div> 
-			<div><span class="size">Size</span>: {{selected.size}}</div>
-			<div><span class="color sr-only">Color</span><span class="color-block  color-label-{{selected.color}}"></span><span class="sr-only">{{selected.color}}</span></div>
+			<span class="price">{{selected.price | currency}}</span> 
+			<span><span class="size">Size</span>: {{selected.size}}</span>
+			<span><span class="color sr-only">Color</span><span class="color-block  color-label-{{selected.color}}"></span><span class="sr-only">{{selected.color}}</span></span>
 		</div>
 		<div class="filters clearfix">
 			<div 
