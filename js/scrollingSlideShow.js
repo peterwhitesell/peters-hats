@@ -10,9 +10,10 @@ scrollingSlideShow.directive('phSlideShow', function(){
 			var interval = null;
 			var rebuild = function(){
 				clearInterval(interval);
-				var bl    = $(elm),
-					th    = $('.thumbs', bl),
-					blW   = bl.outerWidth(),
+				var bl    = $(elm);
+				var th    = $('.thumbs', bl);
+				th.css({marginLeft: 0});
+				var	blW   = bl.outerWidth(),
 					blSW  = bl[0].scrollWidth,
 					wDiff = (blSW/blW) - 1,  // widths difference ratio
 					mPadd = 60,  // Mousemove Padding
@@ -35,7 +36,7 @@ scrollingSlideShow.directive('phSlideShow', function(){
 			};
 			$(document).ready(rebuild);
 			$(window).resize(rebuild);
-			scope.$watch(function(newValue, oldValue){
+			scope.$watchCollection('hats | costs:priceRange.low:priceRange.high | sized:sizeRange.low:sizeRange.high | colored:colors', function(a, b){
 				rebuild();
 			});
 		}

@@ -26,8 +26,8 @@
 						<div class="row">
 							<div class="col-xs-5 hat-details">
 								<div class="price">{{selected.price | currency}}</div> 
-								<div class="size">Size: {{selected.size}}</div>
-								<div class="color">Color: {{selected.color}}</div>
+								<div><span class="size">Size</span>: {{selected.size}}</div>
+								<div><span class="color sr-only">Color</span><span class="color-block  color-label-{{selected.color}}"></span><span class="sr-only">{{selected.color}}</span></div>
 							</div>
 							<div class="filters col-xs-7">
 								<div 

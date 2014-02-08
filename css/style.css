@@ -17,6 +17,24 @@
 	font-weight: bold;
 	font-size: 1.5em;
 }
+.hat-info .size{
+	font-weight: bold;
+}
+.hat-info .color{
+	vertical-align: middle;
+	font-weight: bold;
+}
+.color-block{
+	font-size: 30px;
+	vertical-align: middle;
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
 
 /*------------------------------------
 			FILTERS STYLES
@@ -82,7 +100,6 @@
 			RESULT STYLES
 -------------------------------------*/
 .result{
-	/*float: left;*/
 	display: inline-block;
 	margin-right: 10px;
 	cursor: pointer;
@@ -101,19 +118,16 @@
 	font-weight: bold;
 }
 .thumbs-block {
-    position:relative; /* THIS LINE */
+    position:relative;
     overflow: hidden;
     white-space: nowrap;
-    /*background: #ccc;*/
     margin: 0 5px;
-    /*width: 714px;*/
-    /*width: 100%;*/
-    height:142px;      /* THIS LINE */
+    height:142px;
 } 
-.thumbs{ /* ALL */
+.thumbs{
     white-space: nowrap;
     text-align: center; 
 	position:absolute;
 	padding: 0 2px;
-	margin-left:0;       WILL BE CONTROLLED BY jQ 
+	margin-left:0; 
 }
