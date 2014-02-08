@@ -25,9 +25,8 @@
 	font-weight: bold;
 }
 .color-block{
-	font-size: 30px;
-	vertical-align: middle;
 	display: inline-block;
+	margin-top: 5px;
 	width: 60px;
 	height: 30px;
 
