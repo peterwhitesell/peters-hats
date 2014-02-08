@@ -19,8 +19,7 @@
 	width: 60%
 }
 .hat-info span{
-	/*margin-right: 10px;*/
-	/*vertical-align: middle;*/
+	vertical-align: middle;
 }
 .hat-details{
 	margin-bottom: 20px;
@@ -38,7 +37,6 @@
 }
 .color-block{
 	display: inline-block;
-	margin-top: 5px;
 	width: 30px;
 	height: 20px;
 
