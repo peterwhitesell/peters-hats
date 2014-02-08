@@ -35,6 +35,9 @@ scrollingSlideShow.directive('phSlideShow', function(){
 			};
 			$(document).ready(rebuild);
 			$(window).resize(rebuild);
+			scope.$watch(function(newValue, oldValue){
+				rebuild();
+			});
 		}
 	};
 });
