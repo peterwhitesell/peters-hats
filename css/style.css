@@ -9,22 +9,29 @@
 /*------------------------------------
 			SELECTED STYLES
 -------------------------------------*/
+.hat-name{
+	text-align: center;
+}
 .hat-info{
-	width: 50%;
-}
-.hat-image{
-	width: 50%
-}
-.hat-details{
-	float: left;
 	width: 40%;
 }
+.hat-image{
+	width: 60%
+}
 .hat-info span{
-	margin-right: 20px;
+	/*margin-right: 10px;*/
+	/*vertical-align: middle;*/
+}
+.hat-details{
+	margin-bottom: 20px;
 }
 .hat-details .price{
 	font-weight: bold;
-	font-size: 1.5em;
+	font-size: 1.25em;
+	margin-right: 10px;
+}
+.hat-details .size{
+	margin-right: 10px;
 }
 .hat-details .size-label{
 	font-weight: bold;
@@ -32,8 +39,8 @@
 .color-block{
 	display: inline-block;
 	margin-top: 5px;
-	width: 60px;
-	height: 30px;
+	width: 30px;
+	height: 20px;
 
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -44,9 +51,8 @@
 			FILTERS STYLES
 -------------------------------------*/
 .filter[ph-slider]{
-	float: right;
-	clear: right;
-	width: 60%;
+	width: 80%;
+	margin-right: 10px;
 }
 .filter{
 	clear: right;
